@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<style>
+    .verde{
+        color: rgb(65, 201, 2);
+    }
+
+    .vermelho{
+        color: red;
+    }
+</style>
+<body>
+    <h1>Array</h1>
+    <label for="numero">Digite um número</label>
+    <input type="number" id="numero"> <br> <br>
+
+    <button id="btn">Calcular</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let btn = document.getElementById('btn')
+    let div = document.getElementById('resultado')
+    let num = document.getElementById('numero')
+
+    let arrNumero = []
+
+    function calcular(){
+        arrNumero.push(num.value)
+        console.log(arrNumero)
+
+
+        div.innerHTML = ' '
+        for(let i = 0; i < arrNumero.length; i++){
+
+            if (arrNumero[i] % 2 === 0) {
+            div.innerHTML += `<span class="verde">${arrNumero [i]}</span>`
+
+        } else {
+            div.innerHTML += `<span class="vermelho">${arrNumero [i]}</span>`
+        }
+    }
+}
+    
+
+    
+    btn.addEventListener('click',calcular)
+
+</script>
+</html>
